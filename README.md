@@ -73,3 +73,4 @@ We streamline meal logging using:
 No manual typing or barcode scanning needed.
 
 This unique blend transforms calorie counting into a shared, motivating experience.
+And the app could also used for casual daily meals too which dont have to be fitness related it can be just for clicks.
