@@ -18,19 +18,36 @@ const showingNavigationDropdown = ref(false);
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
-                            <!-- Logo -->
+                            <!-- Logo and App Name -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
                                     <ApplicationLogo
                                         class="block h-9 w-auto fill-current text-gray-800"
                                     />
+                                    <!-- Changed app name to Food Me -->
+                                    <span class="ml-2 text-xl font-semibold text-gray-800">Food Me</span>
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    Home <!-- Changed Dashboard to Home -->
+                                </NavLink>
+                                <NavLink :href="route('messages.index')" :active="route().current('messages.index')">
+                                    Messages
+                                </NavLink>
+                                <NavLink :href="route('posts.create')" :active="route().current('posts.create')">
+                                    New Meal <!-- Changed from 'Create' -->
+                                </NavLink>
+                                <NavLink :href="route('explore.index')" :active="route().current('explore.index')">
+                                    Discover Meals <!-- Changed from 'Explore' -->
+                                </NavLink>
+                                <NavLink :href="route('posts.index')" :active="route().current('posts.index')">
+                                    Posts <!-- Added Posts link -->
+                                </NavLink>
+                                <NavLink :href="route('notifications.index')" :active="route().current('notifications.index')">
+                                    Notifications
                                 </NavLink>
                             </div>
                         </div>
@@ -73,7 +90,7 @@ const showingNavigationDropdown = ref(false);
                             </div>
                         </div>
 
-                        <!-- Hamburger -->
+                        <!-- Hamburger (for mobile navigation) -->
                         <div class="-mr-2 flex items-center sm:hidden">
                             <button
                                 @click="showingNavigationDropdown = !showingNavigationDropdown"
@@ -106,14 +123,29 @@ const showingNavigationDropdown = ref(false);
                     </div>
                 </div>
 
-                <!-- Responsive Navigation Menu -->
+                <!-- Responsive Navigation Menu (for smaller screens) -->
                 <div
                     :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                            Home <!-- Changed Dashboard to Home -->
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('messages.index')" :active="route().current('messages.index')">
+                            Messages
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('posts.create')" :active="route().current('posts.create')">
+                            New Meal
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('explore.index')" :active="route().current('explore.index')">
+                            Discover Meals
+                        </ResponsiveNavLink>
+                         <ResponsiveNavLink :href="route('posts.index')" :active="route().current('posts.index')">
+                            Posts
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('notifications.index')" :active="route().current('notifications.index')">
+                            Notifications
                         </ResponsiveNavLink>
                     </div>
 
